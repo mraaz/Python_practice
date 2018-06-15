@@ -1,0 +1,50 @@
+"""
+Excerice for this video [1]. I implemented coundNodes using factorial.
+
+
+[1] - https://www.youtube.com/watch?v=WwfhLC16bis
+
+""
+
+class Node(object):
+    def __init__(self, value):
+        self.data = value
+        self.next = None
+
+    def setNext(self, next):
+        self.next = next
+
+    def getNext(self):
+        return self.next
+
+
+def countNodes(head):
+
+    if (head.next == None):
+        return 1
+
+    else:
+        return 1 + countNodes(head.next)
+
+
+def main():
+
+    head = Node(4)
+    nodeB = Node(2)
+    nodeC = Node(3)
+    nodeD = Node(10)
+    nodeE = Node(2)
+
+    head.setNext(nodeB)
+    nodeB.setNext(nodeC)
+    nodeC.setNext(nodeD)
+    nodeD.setNext(nodeE)
+    
+    value = countNodes(head)
+    print value
+     
+
+if __name__ ==  "__main__":
+
+   main()
+   
