@@ -45,7 +45,6 @@ def main():
 
     def loopthru_cities(node):
         leaf = True
-        childNode = []
         for city in all_cities:
             if not node and city != start_node:
                 continue
@@ -59,12 +58,11 @@ def main():
             calDistance = 0
 
             node.append(start_node)
-            childNode.append(node)
+
             for x in range(len(node)-1):
                 calDistance += FindDistance(node[x],
                                             node[x + 1], cities_matrix)
             GetSmallestPath(calDistance, node)
-            #print(node)
 
         return
 
