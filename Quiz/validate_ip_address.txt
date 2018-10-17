@@ -1,0 +1,22 @@
+def main():
+    
+    #validate an ip addres
+    
+    #ip = "10.8.9.28"
+    #ip = "100.xyz.1.15"
+    ip = "115.300.10.60"
+    
+    for x in ip.split('.'):
+        try:
+            if not int(x) < 256 and int(x) >= 0:
+                print("Invalid input")
+                return
+        except:
+            print("Invalid input - Unable to convert ")
+            return
+        
+    print("%s is valid" % ip)
+    
+
+if __name__ == "__main__":
+    main()
